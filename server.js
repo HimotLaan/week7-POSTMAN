@@ -44,7 +44,7 @@ app.post('/rke143', (req, res) => {
     console.log(req.body);
 
     if(req.body.username !== 'rke' || req.body.password !== "143") { 
-        res.status(200).json({pumpkinData});
+        res.status(401).json({ message: "Invalid credentials" });
     } else {
         res.status(200).json({nodeData});
     }
