@@ -33,6 +33,13 @@ app.post('/pumpkin', (req, res) => {
     res.status(200).json({ message: 'Welcome' });
 });
 
+app.get('/rke143', (req, res) => {
+    
+    
+    
+    res.status(200).json({ message: 'Welcome to RKE143!' });
+});
+
 app.post('/rke143', (req, res) => { 
     console.log(req.body);
 
