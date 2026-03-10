@@ -7,6 +7,7 @@ const broccoliData = require('./data/broccoli.json');
 const nodeData = require('./data/nodejs.json');
 
 app.use(bodyParser.json());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     const randomIndex = Math.floor(Math.random() * pumpkinData.Categories['Pumpkin Drinks'].length);
@@ -43,7 +44,7 @@ app.get('/rke143', (req, res) => {
 app.post('/rke143', (req, res) => { 
     console.log(req.body);
 
-    if(req.body.username !== 'rke' || req.body.password !== "143") { 
+    if(req.body.name !== 'rke' || req.body.code !== "143") { 
         res.status(401).json({ message: "Invalid credentials" });
     } else {
         res.status(200).json({nodeData});
